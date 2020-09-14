@@ -1,3 +1,8 @@
+# Part1-Project_environment_config
+### 1.vue-cli中项目样式初始化
++ 
+
+
 # travel_project_vue
 
 ## Project setup
