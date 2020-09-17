@@ -27,6 +27,9 @@
       };
     + 此处注意我们引入的时候要加个 ~ 才行; @import '~css/var.styl'
     + 也就是说我们在 improt 'css/xxx' 中可以直接用别名, 在 @import '~css/xxx' 中要加~ 
+
+### 4.填坑-install swiper后出现的cannot find swiper/swiper.css 的问题
+ + 唉，确实在swiper的路径下找不到这个css文件，所以只能换个路径  vue-awesome-swiper/node_modules/swiper/dist/css/swiper.css
 # travel_project_vue 
 
 ## Project setup
