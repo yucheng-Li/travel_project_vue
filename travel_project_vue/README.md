@@ -30,6 +30,20 @@
 
 ### 4.填坑-install swiper后出现的cannot find swiper/swiper.css 的问题
  + 唉，确实在swiper的路径下找不到这个css文件，所以只能换个路径  vue-awesome-swiper/node_modules/swiper/dist/css/swiper.css
+
+### 5.文字溢出问题
+ + 文字溢出问题我们同样采用一个全局样式，在CSS目录下创建 commonmon.styl 然后编辑，注意样式的顺序不能变否则不生效
+ textOverflow()
+    white-space: nowrap; //不换行
+    text-overflow: ellipsis; //溢出部分用省略号
+    overflow: hidden; //超出部分隐藏
+然后我们在我们的组件处调用它
+@import '~css/common.styl'; 
+.Hot-word{
+        margin-top: .1rem;
+        textOverflow(); //这里
+    }
+注意加上我们stylus css预处理器
 # travel_project_vue 
 
 ## Project setup
