@@ -7,6 +7,7 @@
     <Ticket1></Ticket1>
     <Hot></Hot>
     <Like></Like>
+    <Vacation1></Vacation1>
 </div>
 </template>
 
@@ -19,6 +20,7 @@ import Location from './page/Location'
 import Ticket1 from './page/Ticket1'
 import Hot from './page/Hot'
 import Like from './page/Like'
+import Vacation1 from './page/Vacation1'
 export default {
     components:{
         HomeHeader,
@@ -27,7 +29,8 @@ export default {
         Location,
         Ticket1,
         Hot,
-        Like
+        Like,
+        Vacation1
     }
 }
 </script>

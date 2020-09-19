@@ -81,7 +81,7 @@ export default {
     .like{
         margin-top: .2rem;
         background: #fff;
-        height: 6rem;
+        /* height: 6rem; */
     }
     .like-header img{
         width: .3rem;
