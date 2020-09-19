@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="place_home">
     <Header></Header>
     <Hot></Hot>
 </div>
@@ -23,5 +23,7 @@ export default {
  
  
 <style > 
-    
+    .place_home {
+        background: #f5f5f5;
+    }
 </style>
