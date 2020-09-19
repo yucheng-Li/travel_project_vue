@@ -7,7 +7,8 @@
         <span class="iconfont">&#xe617;</span>
         输入城市/景点/游玩主题
     </div>
-    <div class="header-right">北京
+    <div class="header-right">
+        <router-link to="/place">北京</router-link>
         <span class="iconfont trigon">&#xe64a;</span>
     </div>
 </div>
@@ -53,5 +54,8 @@ export default {
         .trigon{    
             font-size: .25rem;
         }
+    }
+    .header-right a {
+        color :#fff;
     }
 </style>
