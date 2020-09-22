@@ -2,12 +2,14 @@
 <div class="place_home">
     <Header></Header>
     <Hot></Hot>
+    <Letter></Letter>
 </div>
 </template>
 
 <script>
 import Header from './page/header'
 import Hot from './page/hot_choose'
+import Letter from './page/letter'
 export default {
     data() {
         return {
@@ -16,7 +18,8 @@ export default {
     },
     components:{
         Header,
-        Hot
+        Hot,
+        Letter
     }
 }
 </script>

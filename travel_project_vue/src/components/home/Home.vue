@@ -31,7 +31,20 @@ export default {
         Hot,
         Like,
         Vacation1
-    }
+    },
+    data() {
+        return {
+            
+        }
+    },
+    mounted() {
+        this.$http.get('/api/static/mock/dataHome.json').then((res) => {
+            const data = res.data.data[0];
+            console.log(data)
+        }
+
+        )
+    },
 }
 </script>
  
