@@ -10,6 +10,7 @@
 import Header from './page/header'
 import Hot from './page/hot_choose'
 import Letter from './page/letter'
+import axios from 'axios'
 export default {
     data() {
         return {
@@ -20,7 +21,13 @@ export default {
         Header,
         Hot,
         Letter
-    }
+    },
+    mounted() {
+        axios.get('/api/city.json')
+        .then((res) => {
+            this.hotcity = res.data.hotCities;
+        })
+    },
 }
 </script>
  

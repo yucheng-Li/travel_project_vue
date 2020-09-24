@@ -1,7 +1,7 @@
 <template>
 <div class="home">
     <HomeHeader></HomeHeader>
-    <Swiper></Swiper>
+    <Swiper :list=list></Swiper>
     <Icon></Icon>
     <Location></Location>
     <Ticket1></Ticket1>
@@ -34,15 +34,14 @@ export default {
     },
     data() {
         return {
-            
+            list:[]
         }
     },
     mounted() {
-        this.$http.get('/api/static/mock/dataHome.json').then((res) => {
-            const data = res.data.data[0];
-            console.log(data)
-        }
-
+        this.$http.get('/api/dataHome.json').then((res) => {
+            this.list = res.data.data[0].swiperList;
+            console.log(this.list)
+            }
         )
     },
 }

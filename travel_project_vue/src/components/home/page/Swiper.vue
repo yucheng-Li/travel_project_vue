@@ -2,7 +2,7 @@
 <div class="header-swiper">
     <swiper ref="mySwiper" :options="swiperOptions">
 
-    <swiper-slide v-for="(item, index) in swiper_List" :key="index"><img :src=item.url :alt=item.id></swiper-slide>
+    <swiper-slide v-for="(item, index) in list" :key="index"><img :src=item.imgUrl :alt=item.id></swiper-slide>
   
     <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
@@ -23,20 +23,7 @@ export default {
         },
           loop:true
       },
-      swiper_List:[
-        {
-          id:'01',
-          url:require('@/assets/img/swiper1.jpeg')
-        },
-        {
-          id:'02',
-          url:require('@/assets/img/swiper2.jpeg')
-        },
-        {
-          id:'03',
-          url:require('@/assets/img/swiper3.jpeg')
-        },
-      ]
+      // swiper_List:list
     }
   },
   components: {
@@ -45,7 +32,9 @@ export default {
   },
   directives: {
     swiper: directive
-  }
+  },
+  props:['list']
+
 }
 </script>
  
