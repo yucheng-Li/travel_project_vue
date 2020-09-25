@@ -8,11 +8,11 @@
 
     <div class="Hot-buttom">
         <ul class="Hot-ul">
-            <li class="Hot-li" v-for="(item, index) in hot_list" :key="index">
-                <img :src=item.url alt="">
+            <li class="Hot-li" v-for="(item, index) in hotList" :key="index">
+                <img :src=item.imgUrl alt="">
                     <br>
-                    <p class="Hot-word">{{item.name}}</p>
-                    <p class="Hot-money">{{item.money}}</p>
+                    <p class="Hot-word">{{item.title}}</p>
+                    <p class="Hot-money">{{item.mark}}</p>
             </li>
         </ul>
     </div>
@@ -21,6 +21,7 @@
 
 <script>
 export default {
+    props:['hotList'],
     data() {
         return {
             hot_list:[

@@ -2,12 +2,12 @@
 <div class="home">
     <HomeHeader></HomeHeader>
     <Swiper :list=list></Swiper>
-    <Icon></Icon>
+    <Icon  :iconList=iconList></Icon>
     <Location></Location>
     <Ticket1></Ticket1>
-    <Hot></Hot>
-    <Like></Like>
-    <Vacation1></Vacation1>
+    <Hot :hotList=hotList></Hot>
+    <Like :likeList=likeList></Like>
+    <Vacation1 :vacationList=vacationList></Vacation1>
 </div>
 </template>
 
@@ -34,13 +34,22 @@ export default {
     },
     data() {
         return {
-            list:[]
+            list:[],
+            iconList:[],
+            hotList:[],
+            likeList:[],
+            vacation:[]
         }
     },
     mounted() {
         this.$http.get('/api/dataHome.json').then((res) => {
             this.list = res.data.data[0].swiperList;
-            console.log(this.list)
+            this.iconList = res.data.data[0].iconsList;
+            this.hotList = res.data.data[0].hotList;
+            this.likeList = res.data.data[0].likeList;
+            this.vacationList = res.data.data[0].vacationList;
+
+            console.log(res)
             }
         )
     },

@@ -3,11 +3,11 @@
     <div class="Vacation-header">   
         周末去哪玩
     </div>
-    <div class="Vacation-item"  v-for="(item, index) in vacation_list" :key="index">
-        <img :src=item.url alt="">
+    <div class="Vacation-item"  v-for="(item, index) in vacationList" :key="index">
+        <img :src=item.imgUrl alt="">
         <div class="Vacation-message">
             <p class="Vacation-message-first">{{item.title}}</p>
-            <p class="Vacation-message-second"> {{item.message}}</p>
+            <p class="Vacation-message-second"> {{item.msg}}</p>
         </div>
     </div>
 </div>
@@ -15,6 +15,7 @@
 
 <script>
 export default {
+    props:['vacationList'],
     data() {
         return {
             vacation_list:[

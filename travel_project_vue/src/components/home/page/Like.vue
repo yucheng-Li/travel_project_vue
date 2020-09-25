@@ -4,14 +4,14 @@
         <img src="http://img1.qunarZZ.com/piao/fusion/1711/89/ebc329f16c55bb02.png" alt="">
         猜你喜欢
     </div>
-    <div class="like-item" v-for="(item, index) in like_list" :key="index">
-        <img :src=item.url alt="">
+    <div class="like-item" v-for="(item, index) in likeList" :key="index">
+        <img :src=item.imgUrl alt="">
         <div class="like-message">
             <p class="like-message-title">{{item.title}}</p>
-            <p class="">{{item.title}}</p>
+            <p class="">{{item.msg}}条评论</p>
             <div class="like-message-buttom">
-                <span><b>{{item.price}}</b>起</span>
-                <span class="like-message-buttom-right">{{item.place}}</span>
+                <span><b>{{item.pre}}</b>起</span>
+                <span class="like-message-buttom-right">{{item.map}}</span>
             </div>
         </div>
     </div>
@@ -20,6 +20,7 @@
 
 <script>
 export default {
+    props:['likeList'],
     data() {
         return {
             like_list:[

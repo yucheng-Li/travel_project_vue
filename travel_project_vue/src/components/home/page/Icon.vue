@@ -1,14 +1,14 @@
 <template>
-<div class="icon"> 
+<div class="icon" > 
     <!-- <div v-for="(item, index) in icon_list" :key="index" class="icon-item">
         <img :src=item.url :alt=item.title>
         
     </div> -->
-    <swiper ref="mySwiper" :options="swiperOptions">
+    <swiper ref="mySwiper" :options="swiperOptions" >
 
-        <swiper-slide v-for="(item, index) in page" :key="index">
+        <swiper-slide  v-for="(item, index) in page" :key="index">
             <div class="icon-item" v-for="(item1,index) in item" :key="index">
-                <img :src=item1.url ><p>{{item1.title}}</p>
+                <img :src=item1.imgUrl ><p>{{item1.title}}</p>
             </div>
         </swiper-slide>
     
@@ -21,52 +21,11 @@
 import { swiper, swiperSlide,directive } from 'vue-awesome-swiper'
 import 'vue-awesome-swiper/node_modules/swiper/dist/css/swiper.css'
 export default {
+    props:['iconList'],
+    
     data() {
         return {
-            icon_list:[
-                {
-                    title:'火车',
-                    url:'//s.qunarzz.com/homenode/images/touchheader/train.png'
-                },
-                {
-                    title:'火车',
-                    url:'//s.qunarzz.com/homenode/images/touchheader/train.png'
-                },
-                {
-                    title:'火车',
-                    url:'//s.qunarzz.com/homenode/images/touchheader/train.png'
-                },
-                {
-                    title:'火车',
-                    url:'//s.qunarzz.com/homenode/images/touchheader/train.png'
-                },
-                {
-                    title:'火车',
-                    url:'//s.qunarzz.com/homenode/images/touchheader/train.png'
-                },
-                {
-                    title:'火车',
-                    url:'//s.qunarzz.com/homenode/images/touchheader/train.png'
-                },
-                {
-                    title:'火车',
-                    url:'//s.qunarzz.com/homenode/images/touchheader/train.png'
-                },
-                {
-                    title:'火车',
-                    url:'//s.qunarzz.com/homenode/images/touchheader/train.png'
-                },
-                {
-                    title:'火车',
-                    url:'//s.qunarzz.com/homenode/images/touchheader/train.png'
-                },
-                {
-                    title:'火车',
-                    url:'//s.qunarzz.com/homenode/images/touchheader/train.png'
-                },
-            ],
             swiperOptions:{}
-        
         }
     },
     components: {
@@ -86,14 +45,18 @@ export default {
     computed: {
        page () {
            let pages = [];
-           this.icon_list.forEach((item, index) => {
+           if(this.iconList != undefined){
+               this.iconList.forEach((item, index) => {
                let idx = Math.floor(index/8);
                if(!pages[idx]) pages[idx] = [];
                pages[idx].push(item)
            })
            return pages
+           }
+           return 0
        }
     },
+    
 }
 </script>
  
