@@ -52,9 +52,29 @@ export default {
         font-size: .32rem;
     }
     .letter-sort li {
+        background: #fff;
         float: left;
         text-align: center;
         line-height: 1rem;
         width: 16.6%;
+        /* border-bottom: 1px solid #e0e0e0; */
+
     }
+    /* .letter-sort-ul {
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+    }
+    .letter-sort-ul::before{
+        position: absolute;
+        content: ' ';
+        height: 100%;
+        /* width: 16.6%; */
+        /* left: 16.6%; */
+        /* right: 16.6%; */
+
+        /* margin: .3rem 0; */
+        /* border-left: 1px solid #e0e0e0; */
+        /* border-right: 1px solid #e0e0e0; */
+    /* } */
 </style>

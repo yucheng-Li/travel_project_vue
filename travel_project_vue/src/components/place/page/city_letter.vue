@@ -1,5 +1,5 @@
 <template>
-<div class="City-hot">
+<div class="city-letter">
     <div class="City-hot-head">
         热门城市
     </div>
@@ -12,10 +12,12 @@
 </template>
 
 <script>
+
 export default {
     props:['hotcity'],
     data() {
         return {
+            
         }
     },
 }
@@ -23,7 +25,7 @@ export default {
  
  
 <style > 
-    .City-hot-head {
+     .City-hot-head {
         font-size: .32rem;
         background: #f5f5f5;
         height: .36rem;

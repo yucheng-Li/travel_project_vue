@@ -18,41 +18,7 @@ export default {
     props:['vacationList'],
     data() {
         return {
-            vacation_list:[
-                {
-                    url:'http://img1.qunarzz.com/sight/source/1606/85/c6b6bad1b977e.jpg_r_640x214_5c638941.jpg',
-                    title:'北京清凉避暑胜地',
-                    message:'到大自然中享受"天然空调"的清凉'
-                },
-                {
-                    url:'http://img1.qunarzz.com/sight/source/1606/85/c6b6bad1b977e.jpg_r_640x214_5c638941.jpg',
-                    title:'北京清凉避暑胜地',
-                    message:'到大自然中享受"天然空调"的清凉'
-                },
-                {
-                    url:'http://img1.qunarzz.com/sight/source/1606/85/c6b6bad1b977e.jpg_r_640x214_5c638941.jpg',
-                    title:'北京清凉避暑胜地',
-                    message:'到大自然中享受"天然空调"的清凉'
-                },{
-                    url:'http://img1.qunarzz.com/sight/source/1606/85/c6b6bad1b977e.jpg_r_640x214_5c638941.jpg',
-                    title:'北京清凉避暑胜地',
-                    message:'到大自然中享受"天然空调"的清凉'
-                }
-                ,{
-                    url:'http://img1.qunarzz.com/sight/source/1606/85/c6b6bad1b977e.jpg_r_640x214_5c638941.jpg',
-                    title:'北京清凉避暑胜地',
-                    message:'到大自然中享受"天然空调"的清凉'
-                },
-                {
-                    url:'http://img1.qunarzz.com/sight/source/1606/85/c6b6bad1b977e.jpg_r_640x214_5c638941.jpg',
-                    title:'北京清凉避暑胜地',
-                    message:'到大自然中享受"天然空调"的清凉'
-                },{
-                    url:'http://img1.qunarzz.com/sight/source/1606/85/c6b6bad1b977e.jpg_r_640x214_5c638941.jpg',
-                    title:'北京清凉避暑胜地',
-                    message:'到大自然中享受"天然空调"的清凉'
-                }
-            ]
+         
         }
     },
 }

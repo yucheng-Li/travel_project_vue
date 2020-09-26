@@ -38,7 +38,7 @@ export default {
             iconList:[],
             hotList:[],
             likeList:[],
-            vacation:[]
+            vacationList:[]
         }
     },
     mounted() {

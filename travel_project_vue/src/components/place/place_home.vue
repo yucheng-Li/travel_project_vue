@@ -1,8 +1,9 @@
 <template>
 <div class="place_home">
     <Header></Header>
-    <Hot></Hot>
+    <Hot :hotcity=hotcity></Hot>
     <Letter></Letter>
+    <CityLetter :hotcity=hotcity></CityLetter>
 </div>
 </template>
 
@@ -10,22 +11,25 @@
 import Header from './page/header'
 import Hot from './page/hot_choose'
 import Letter from './page/letter'
+import CityLetter from './page/city_letter'
 import axios from 'axios'
 export default {
     data() {
         return {
-            
+            hotcity:[]
         }
     },
     components:{
         Header,
         Hot,
-        Letter
+        Letter,
+        CityLetter
     },
     mounted() {
         axios.get('/api/city.json')
         .then((res) => {
-            this.hotcity = res.data.hotCities;
+            this.hotcity = res.data.data.hotCities;
+            console.log(this.hotcity)
         })
     },
 }
