@@ -11,6 +11,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 // If you use Swiper 6.0.0 or higher
 import 'swiper/swiper-bundle.css'
 import axios from 'axios'
+import store from './store/index.js'
 
 Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 
@@ -24,5 +25,6 @@ Vue.prototype.$http = axios
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store 
 }).$mount('#app')
