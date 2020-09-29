@@ -23,12 +23,12 @@
             </div>
             </div>
             <div class="city-letter" v-for="(item, index) of city" :key="index" :ref="index">
-                <div class="City-head"  >
+                <div class="City-head">
                     {{index}}
                 </div>
                 <div class="City-choose">
                     <ul class="City-ul">
-                        <li v-for="item1 in item" :key="item1.id">{{item1.name}}</li>
+                        <li v-for="item1 in item" :key="item1.id" @click='cityChange(item1.name)'>{{item1.name}}</li>
                     </ul>
                 </div>
             </div>

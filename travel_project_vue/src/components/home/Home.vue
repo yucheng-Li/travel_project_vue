@@ -12,7 +12,7 @@
 </template>
 
 <script>
-
+import {mapState} from 'vuex'
 import HomeHeader from './page/Header'
 import Swiper from './page/Swiper'
 import Icon from './page/Icon'
@@ -38,20 +38,38 @@ export default {
             iconList:[],
             hotList:[],
             likeList:[],
-            vacationList:[]
+            vacationList:[],
+            nowCity:''
         }
     },
+    computed: {
+        ...mapState(['city'])
+    },
+    methods: {
+         getHttp(){
+            this.$http.get('/api/dataHome.json').then((res) => {
+            for(let i = 0; i < res.data.data.length; i++) {
+                if(this.city == res.data.data[i].city) {
+                        // this.nowCity = res.data.data[i].city
+                        let place = res.data.data[i];   
+                        this.list = place.swiperList;
+                        this.iconList = place.iconsList;
+                        this.hotList = place.hotList;
+                        this.likeList = place.likeList;
+                        this.vacationList = place.vacationList;
+                    }
+                }
+            })
+        }     
+    },
     mounted() {
-        this.$http.get('/api/dataHome.json').then((res) => {
-            this.list = res.data.data[0].swiperList;
-            this.iconList = res.data.data[0].iconsList;
-            this.hotList = res.data.data[0].hotList;
-            this.likeList = res.data.data[0].likeList;
-            this.vacationList = res.data.data[0].vacationList;
-
-            console.log(res)
-            }
-        )
+        this.getHttp()
+    },
+    activated() {
+        if(this.city != this.newCity) {
+            this.getHttp();
+            this.newCity = this.city
+        }
     },
 }
 </script>

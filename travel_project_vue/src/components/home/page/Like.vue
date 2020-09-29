@@ -4,17 +4,20 @@
         <img src="http://img1.qunarZZ.com/piao/fusion/1711/89/ebc329f16c55bb02.png" alt="">
         猜你喜欢
     </div>
-    <div class="like-item" v-for="(item, index) in likeList" :key="index">
-        <img :src=item.imgUrl alt="">
-        <div class="like-message">
-            <p class="like-message-title">{{item.title}}</p>
-            <p class="">{{item.msg}}条评论</p>
-            <div class="like-message-buttom">
-                <span><b>{{item.pre}}</b>起</span>
-                <span class="like-message-buttom-right">{{item.map}}</span>
+    <router-link to="/detail">
+        <div class="like-item" v-for="(item, index) in likeList" :key="index">
+            <img :src=item.imgUrl alt="">
+            <div class="like-message">
+                <p class="like-message-title">{{item.title}}</p>
+                <p class="">{{item.msg}}条评论</p>
+                <div class="like-message-buttom">
+                    <span><b>{{item.pre}}</b>起</span>
+                    <span class="like-message-buttom-right">{{item.map}}</span>
+                </div>
             </div>
         </div>
-    </div>
+    </router-link>
+
 </div>
 </template>
 
@@ -84,6 +87,10 @@ export default {
         background: #fff;
         /* height: 6rem; */
     }
+    .like a{
+        color: #000;
+
+    }
     .like-header img{
         width: .3rem;
         height: .3rem;
@@ -98,7 +105,7 @@ export default {
         font-size: .32rem;
         padding: .2rem;
         border-bottom: 1px solid #e0e0e0;
-
+        text-decoration: none;
     }
     .like-item img {
         width: 2.4rem;
