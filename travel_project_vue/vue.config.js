@@ -9,6 +9,7 @@ module.exports = {
       plugins: [
       ],
       devServer: {
+        host:'0.0.0.0',
         proxy: {  
             '/api': {
               target: 'http://localhost:8080', //路径指向本地主机地址及端口号

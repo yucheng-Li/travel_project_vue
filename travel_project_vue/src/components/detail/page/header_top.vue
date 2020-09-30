@@ -6,10 +6,10 @@
         </div>
     </router-link>
     
-    
-    <div class="dt-header" v-show="show">
-        <div class="dt-header-left">
-        </div>  
+     
+    <div class="dt-header"  :style='styleOpacity'>
+        <!-- <div class="dt-header-left">
+        </div>  -->
 
         <div class="dt-header-right">
             <p>城市选择</p> 
@@ -23,24 +23,28 @@
 export default {
     data() {
         return { 
-            show:false
+            styleOpacity:{
+                opacity:0
+            }
         }
     },
      mounted() {
 	// 监听页面滚动事件
       window.addEventListener("scroll", this.showSearch)
     },
-
     methods: {
     //头部fixed定位
     showSearch() {
       let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       if (scrollTop  > 130) {   // 当页面滚动到高度300px处，动态绑定class 来设置头部固定定位
-        this.show = true;
+        this.styleOpacity.opacity = scrollTop/130;
+        console.log(this.styleOpacity)
       }else {
-        this.show = false;
+        this.styleOpacity.opacity = scrollTop/130;
+        console.log(this.styleOpacity)
       }
     },
+    
 
 }
 }
@@ -57,6 +61,7 @@ export default {
         border-radius: 50%; 
         background #000
         opacity .5
+        z-index 1000
     }
     .header-back-icon {
         position: absolute;
@@ -78,6 +83,7 @@ export default {
         width: .5rem;
         padding: 0 .2rem;
         position: absolute;
+        z-index 1000
     }
     .dt-header-right{
         color: #fff;

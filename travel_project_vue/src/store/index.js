@@ -4,7 +4,9 @@ import Vuex from 'vuex'
 Vue.use(Vuex);
 
 var defaultCity = '上海';
-defaultCity = localStorage.city ;
+if(localStorage.city) {
+    defaultCity = localStorage.city ;
+}
 
 const state = {
     city:defaultCity

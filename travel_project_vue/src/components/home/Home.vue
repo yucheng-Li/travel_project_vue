@@ -21,6 +21,7 @@ import Ticket1 from './page/Ticket1'
 import Hot from './page/Hot'
 import Like from './page/Like'
 import Vacation1 from './page/Vacation1'
+import axios from 'axios'
 export default {
     components:{
         HomeHeader,
@@ -39,7 +40,7 @@ export default {
             hotList:[],
             likeList:[],
             vacationList:[],
-            nowCity:''
+            nowCity:'北京'
         }
     },
     computed: {
@@ -47,7 +48,7 @@ export default {
     },
     methods: {
          getHttp(){
-            this.$http.get('/api/dataHome.json').then((res) => {
+            axios.get('/api/dataHome.json').then((res) => {
             for(let i = 0; i < res.data.data.length; i++) {
                 if(this.city == res.data.data[i].city) {
                         // this.nowCity = res.data.data[i].city

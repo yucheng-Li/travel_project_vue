@@ -20,7 +20,7 @@ FastClick.attach(document.body);
 
 Vue.prototype.$http = axios
  axios.create({
-  baseURL: '/api',  //process.env.BASE_API,
+  baseURL: '/',  //process.env.BASE_API,
 })
 
 new Vue({
